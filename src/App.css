@@ -1,3 +1,548 @@
+/************ Custom Fonts ************/
+
+@font-face {
+  font-family:Lora;
+  src: url('./Assets/Font/Lora-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family:Lora;
+  src: url('./Assets/Font/Lora-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family:Lora;
+  src: url('./Assets/Font/Lora-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family:Lora;
+  src: url('./Assets/Font/Lora-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family:Ubuntu;
+  src: url('./Assets/Font/Ubuntu-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family:Ubuntu;
+  src: url('./Assets/Font/Ubuntu-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family:Ubuntu;
+  src: url('./Assets/Font/Ubuntu-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family:Ubuntu;
+  src: url('./Assets/Font/Ubuntu-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family:Ubuntu;
+  src: url('./Assets/Font/Ubuntu-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family:Ubuntu;
+  src: url('./Assets/Font/Ubuntu-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family:Ubuntu;
+  src: url('./Assets/Font/Ubuntu-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family:Ubuntu;
+  src: url('./Assets/Font/Ubuntu-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/************ Default CSS ************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+body {
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #F5ECDF !important;
+  color: #300E0F !important; 
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  font-family: 'Lora', serif !important;
+}
+
+
+/************ Navigation Bar ************/
+nav.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  position: fixed;
+  width: 100%;
+  top: -100px;
+  z-index: 9999;
+  transition: 0.32 ease-in-out;
+}
+
+nav.navbar.scrolled {
+  top: 0;
+  padding: 0px 0;
+  background-color: #F5ECDF;
+}
+
+nav.navbar a.navbar-brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav.navbar .navbar-nav {
+  flex-grow: 1;
+}
+
+nav.navbar .navbar-nav:first-child {
+  justify-content: flex-start;
+}
+
+nav.navbar .navbar-nav:last-child {
+  justify-content: flex-end;
+}
+
+nav.navbar a.navbar-brand img {
+  height: 80%; 
+  width: auto; 
+  max-height: 60px; 
+}
+
+nav.navbar .navbar-nav .nav-link.navbar-link {
+  font-weight: 400;
+  color: #300E0F;
+  letter-spacing: 0.8px;
+  padding: 0 25px;
+  font-size: 18px;
+  opacity: 0.75;
+  transition: color 0.3s ease-in-out;
+}
+
+nav.navbar .navbar-nav .nav-link.navbar-link:active {
+  color: #CA4E56 !important;
+  text-decoration: underline !important;
+}
+
+nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
+nav.navbar .navbar-nav a.nav-link.navbar-link:active {
+  color: #CA4E56;
+  text-decoration: none;
+}
+
+nav.navbar .navbar-nav a.nav-link.navbar-link:active {
+  text-decoration: underline;
+}
+
+span.navbar-text {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.social-icon {
+  display: flex;
+  gap: 10px;
+  margin-left: 14px;
+}
+
+.social-icon a {
+  width: 42px;
+  height: 42px;
+  background: rgba(217, 217, 217, 0.1);
+  display: inline-flex;
+  border-radius: 50%;
+  margin-right: 6px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: 1px solid #300E0F;
+}
+
+.social-icon a::before {
+  content: "";
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  background-color: #CA4E56;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.3s ease-in-out;
+}
+
+.social-icon a:hover::before {
+  transform: scale(1);
+}
+
+.social-icon a i {
+  width: 40%;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+  color: #300E0F;
+}
+
+.social-icon a:hover i {
+  color: #F5ECDF;
+}
+
+.navbar-text button {
+  font-weight: 700;
+  color: #F5ECDF;
+  border: 1px solid #ffff;
+  padding: 18px 34px;
+  font-size: 18px;
+  margin-left: 18px;
+  position: relative;
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
+}
+
+nav.navbar .navbar-toggler:active,
+nav.navbar .navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+nav.navbar .navbar-toggler-icon {
+  width: 24px;
+  height: 17px;
+  background-image: none;
+  position: relative;
+  border-bottom: 2px solid #ffff;
+  transition: all 300es linear;
+  top: -2px;
+}
+
+nav.navbar .navbar-toggler-icon:focus {
+  border-bottom: 2px solid #ffff;
+}
+
+nav.navbar .navbar-toggler-icon:after,
+nav.navbar .navbar-toggler-icon:before {
+  width: 24px;
+  position: absolute;
+  height: 2px;
+  background-color: #ffff;
+  top: 0;
+  left: 0;
+  content: '';
+  z-index: 2;
+  transition: all 300es linear;
+}
+
+nav.navbar .navbar-toggler-icon:after {
+  top: 8px;
+}
+
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+  transform: rotate(45deg);
+  background-color: #ffff;
+  height: 2px;
+}
+
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+  transform: translateY(8px) rotate(-45deg);
+  background-color: #ffff;
+  height: 2px;
+}
+
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  border-color: transparent;
+}
+
+
+/************ Banner ************/
+.banner {
+  height: 100vh;
+  background-image: url('/src/Assets/Img/Banner-Bg.jpg');
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding-top: 5%;
+}
+
+.banner img {  
+  max-width: 400px;
+  margin-bottom: 10px;
+}
+
+.banner .tagline {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 24px; 
+  font-family: 'Lora', serif !important; 
+  font-weight: 700;
+  color: #300E0F;
+}
+
+.banner button {
+  padding: 12px 20px;
+  font-size: 18px;
+  font-family: 'Ubuntu', sans-serif !important;
+  background-color: #CA4E56; 
+  color: #F5ECDF;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.banner button:hover {
+  background-color: #a03a43; 
+}
+
+
+/************ Introduction ************/
+.intro {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro h1, .intro p, .intro-button {
+  text-align: left; 
+}
+
+.intro h1 {
+  color: #300E0F;
+  font-size: 50px;
+  font-weight: 700;
+  font-family: 'Lora', serif !important;
+  Letter-spacing: 0.8px;
+  line-height: 1;
+  margin-bottom: 25px;
+}
+
+.intro p {
+  color: #300E0F;
+  font-size: 18px;
+  font-family: 'Ubuntu', sans-serif !important;
+  letter-spacing: 0.8px;
+  line-height: 1.5rem;
+  width: 96%;
+  margin-bottom: 25px;
+}
+
+.intro-button {
+  display: block;
+}
+
+.intro-button button {
+  padding: 12px 20px;
+  font-size: 18px;
+  font-family: 'Ubuntu', sans-serif !important;
+  background-color: #CA4E56; 
+  color: #F5ECDF;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  display: inline-block;
+}
+
+.intro-button button:hover {
+  background-color: #a03a43; 
+}
+
+.intro-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+@media (max-width: 992px) {
+  .intro-img {
+    width: 500px;
+  }
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.txt-rotate > .wrap, .wrap {
+  border-right:0.08em solid #300E0F;
+  animation: blink-caret 0.7s step-end infinite;
+}
+
+.intro-scroll-button {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #300e0fa6;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  align-items: center;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  line-height: 0;
+}
+
+.intro-scroll-button:hover {
+  color: #CA4E56;
+}
+
+.intro-scroll-button i {
+  font-size: 50px;
+  transition: transform 0.3s ease;
+}
+
+.intro-scroll-button:hover i {
+  transform: translateY(4px); 
+}
+
+.intro-scroll-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+/********** Projects ***********/
+
+.projects {
+  min-height: 100vh;
+  background-color: #D4DCD3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 150px;
+}
+
+.projects-description h2 {
+  color: #300E0F;
+  font-size: 50px;
+  font-weight: 700;
+  font-family: 'Lora', serif !important;
+  Letter-spacing: 0.8px;
+  line-height: 1;
+  margin-bottom: 25px;
+}
+
+.projects-description p {
+  color:#300E0F;
+  font-size: 18px;
+  font-family: 'Ubuntu', sans-serif !important;
+  letter-spacing: 0.8px;
+  line-height: 1.5rem;
+  width: 96%;
+  margin-bottom: 100px;
+}
+
+.projects-row {
+  background-color: #F5ECDF; 
+  border-radius: 40px; 
+  padding: 100px;
+  margin: 100px;
+  margin: 50px, 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.projects-item {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start; 
+}
+
+.projects-item h3, .projects-item p, .projects-item button {
+  text-align: left; 
+}
+
+.projects-item h3 {
+  color: #300E0F;
+  font-size: 40px;
+  font-weight: 700;
+  font-family: 'Lora', serif !important;
+  Letter-spacing: 0.8px;
+  line-height: 1;
+  margin-bottom: 25px;
+}
+
+.projects-item p {
+  color:#300E0F;
+  font-size: 18px;
+  font-family: 'Ubuntu', sans-serif !important;
+  letter-spacing: 0.8px;
+  line-height: 1.5rem;
+  width: 96%;
+}
+
+.projects-item button {
+  background-color: #CA4E56; 
+  color: #fff; 
+  border: none;
+  border-radius: 60px;
+  padding: 10px 15px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px; 
+  font-family: 'Ubuntu', sans-serif;
+  display: inline-block;
+}
+
+.projects-item button:hover {
+  background-color: #a03a43;
+}
+
 .App {
   text-align: center;
 }
@@ -36,3 +581,5 @@
     transform: rotate(360deg);
   }
 }
+
+
