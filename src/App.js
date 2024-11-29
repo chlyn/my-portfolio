@@ -5,7 +5,7 @@ import { NavBar } from './Components/NavBar';
 import { Banner } from './Components/Banner';
 import { Intro } from './Components/Intro.js';
 import { Projects } from './Components/Projects.js';
-import AboutMe from './Components/AboutMe.js';
+import AboutMe from './Pages/AboutMe.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
